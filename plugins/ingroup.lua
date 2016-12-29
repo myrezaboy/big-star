@@ -352,11 +352,11 @@ local function lock_group_username(msg, data, target)
   end
   local group_english_lock = data[tostring(target)]['settings']['lock_english']
   if group_english_lock == 'yes' then
-    return 'ایگلیسی از قبل قفل است🔒'
+    return 'انگلیسی از قبل قفل است🔒'
   else
     data[tostring(target)]['settings']['lock_english'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'اینگلیسی قفل شد✅🔒'
+    return 'انگلیسی قفل شد✅🔒'
   end
 end
 
@@ -366,11 +366,11 @@ local function unlock_group_english(msg, data, target)
   end
   local group_english_lock = data[tostring(target)]['settings']['lock_english']
   if group_english_lock == 'no' then
-    return 'اینگلیسی از قبل باز است🔓'
+    return 'انگلیسی از قبل باز است🔓'
   else
     data[tostring(target)]['settings']['lock_english'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'اینگلیسی ازاد شد✅🔓'
+    return 'انگلیسی ازاد شد✅🔓'
   end
 end
 
@@ -454,13 +454,13 @@ local function unlock_group_username(msg, data, target)
   else
     data[tostring(target)]['settings']['lock_username'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'ارسال یوزر نیم آژاد شد✅🔓'
+    return 'ارسال یوزر نیم آزاد شد✅🔓'
   end
 end
 
 local function lock_group_bots(msg, data, target)
   if not is_momod(msg) then
-    return "قفط مدیران"
+    return "فقط مدیران"
   end
   local group_bots_lock = data[tostring(target)]['settings']['lock_bots']
   if group_bots_lock == 'yes' then
